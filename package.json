@@ -1,0 +1,24 @@
+{
+  "name": "tileslider",
+  "version": "0.1.0",
+  "description": "A simple slider, that displayes multiple tiles in a row. A tile gets visible/active by click or by time (automation)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-unknown/tileslider.git"
+  },
+  "keywords": [
+    "slider",
+    "tiles",
+    "carousel"
+  ],
+  "author": "pixelbash",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/the-unknown/tileslider/issues"
+  },
+  "homepage": "https://github.com/the-unknown/tileslider#readme"
+}
