@@ -14,7 +14,10 @@ or
 
 import as module
 ```js
+    //import javascript
     import tileslider from 'tileslider'
+    //import css
+    import 'tileslider/tileslider.css'
 ```    
 
 ### Vanilla JS
@@ -35,3 +38,22 @@ Place the main-function of the slider somewhere in your JavaScript code:
 ```js
     tileslider();
 ```    
+
+## Functions
+
+### Basic
+This is the basic start. The slider is static and will not slide automatically
+```js
+    tileslider();
+```   
+### Automatic
+Use this to activate the automatic slide feature.
+```js
+    tileslider(true);
+```   
+
+Specify the speed of the autoslide
+```js
+    tileslider(true, 5000);
+```   
+The `5000` will let the slider slide automatically after 5sec (5000 milliseconds).
