@@ -1,6 +1,6 @@
 {
   "name": "tileslider",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A simple slider, that displayes multiple tiles in a row. A tile gets visible/active by click or by time (automation)",
   "main": "index.js",
   "scripts": {

@@ -1,0 +1,23 @@
+.tileslider{
+    display:flex;
+    gap: 1rem;
+    align-items: top;
+    justify-content: center;
+}
+
+.slide{
+    width: 100px;
+    height: 450px;
+    overflow:hidden;
+    border-radius: 25px;
+    background-color: #ccc;
+    transition: width 0.5s ease;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.slide.active{
+    width: 600px;
+}
