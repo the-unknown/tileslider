@@ -1,4 +1,4 @@
-const imgSlider = (auto = false, interval = 10000) => {
+const tileslider = (auto = false, interval = 10000) => {
   const firstSlide = document.querySelector('.tileslider .slide')
   if(firstSlide){
     firstSlide.classList.add('active')
@@ -38,4 +38,4 @@ const imgSlider = (auto = false, interval = 10000) => {
   
 }
 
-imgSlider(true);
+default export tileslider
