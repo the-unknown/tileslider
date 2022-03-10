@@ -10,13 +10,12 @@ const tileslider = (auto = false, interval = 10000) => {
     }
   
     const allSlides = document.querySelectorAll('.tileslider .slide')
-    allSlides.forEach((slide, id) => slide.addEventListener('click', activateSlide));
+    allSlides.forEach((slide) => slide.addEventListener('click', activateSlide));
     
     if(auto == true){
       setInterval(()=>{
         const getActive = () =>{
-          for(i=0;i<allSlides.length;i++){
-            let j = i + 1
+          for(let i=0;i<allSlides.length;i++){
            if(allSlides[i].classList.contains('active')){
               return i;
             }
