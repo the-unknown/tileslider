@@ -1,5 +1,12 @@
-const tileslider = (auto = false, interval = 10000) => {
-  const firstSlide = document.querySelector('.tileslider .slide')
+const tileslider = (props) => {
+  const settings = {
+    auto: props.auto || true,
+    interval: props.interval || 10000,
+    mainClass: props.mainClass || '.tileslider',
+    slideClass: props.slideClass || '.slide'
+  }
+
+  const firstSlide = document.querySelector(`${settings.mainClass} ${settings.slideClass}`)
   if(firstSlide){
     firstSlide.classList.add('active')
 
@@ -9,10 +16,10 @@ const tileslider = (auto = false, interval = 10000) => {
       e.currentTarget.classList.add('active')
     }
   
-    const allSlides = document.querySelectorAll('.tileslider .slide')
+    const allSlides = document.querySelectorAll(`${settings.mainClass} ${settings.slideClass}`)
     allSlides.forEach((slide) => slide.addEventListener('click', activateSlide));
     
-    if(auto == true){
+    if(settings.auto == true){
       setInterval(()=>{
         const getActive = () =>{
           for(let i=0;i<allSlides.length;i++){
@@ -31,7 +38,7 @@ const tileslider = (auto = false, interval = 10000) => {
           allSlides[0].classList.add('active')
         }
         
-      },interval)
+      },settings.interval)
     }
   }
   
