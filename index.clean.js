@@ -6,29 +6,35 @@ const tileslider = (props) => {
     slideClass: props.slideClass || '.slide'
   }
 
+  let interval
+  
+
   const firstSlide = document.querySelector(`${settings.mainClass} ${settings.slideClass}`)
   if(firstSlide){
     firstSlide.classList.add('active')
 
-    const activateSlide = (e) => {
-      const active = document.querySelector('.active')
-      active.classList.remove('active')
-      e.currentTarget.classList.add('active')
-    }
+  const activateSlide = (e) => {
+    const active = document.querySelector('.active')
+    active.classList.remove('active')
+    e.currentTarget.classList.add('active')
+    clearInterval(interval);
+    autoSlide();
+  }
   
-    const allSlides = document.querySelectorAll(`${settings.mainClass} ${settings.slideClass}`)
-    allSlides.forEach((slide) => slide.addEventListener('click', activateSlide));
-    
+  const allSlides = document.querySelectorAll(`${settings.mainClass} ${settings.slideClass}`)
+  allSlides.forEach((slide) => slide.addEventListener('click', activateSlide));
+
+  const autoSlide = () => {
     if(settings.auto == true){
-      setInterval(()=>{
+      interval = setTimeout(()=>{
         const getActive = () =>{
           for(let i=0;i<allSlides.length;i++){
-           if(allSlides[i].classList.contains('active')){
+            if(allSlides[i].classList.contains('active')){
               return i;
             }
           }
         }
-        
+          
         const currentActive = getActive();
         if((currentActive + 1) < allSlides.length){
           allSlides[currentActive].classList.remove('active')
@@ -37,11 +43,16 @@ const tileslider = (props) => {
           allSlides[currentActive].classList.remove('active')
           allSlides[0].classList.add('active')
         }
-        
+  
+        autoSlide()
+          
       },settings.interval)
     }
   }
-  
+
+  autoSlide();
+
+  }
 }
 
 export default tileslider
